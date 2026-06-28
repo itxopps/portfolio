@@ -167,6 +167,21 @@
   if (others.length === 0) {
     $("#otherProjects").style.display = "none";
   }
+  function renderProjectFooter() {
+    const footer = make("footer", "site-footer");
+    const currentYear = new Date().getFullYear();
+    
+    footer.innerHTML = `
+      <div class="footer-inner">
+        <p>&copy; ${currentYear} ${profile.name}. All Rights Reserved.</p>
+        <p class="developer-credit">Designed & Built by <a href="${profile.contact.linkedin}" target="_blank" rel="noreferrer">${profile.name}</a></p>
+      </div>
+    `;
+    
+    $(".site-shell").append(footer);
+  }
+  
+  renderProjectFooter();
 
   /* ── theme toggle ─────────────────────────────────────────────── */
   function setupTheme() {
