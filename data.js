@@ -165,7 +165,7 @@ window.portfolioProfile = {
       title: "Pride of Performance in R&D",
       issuer: "Tesla Industries",
       year: "2023",
-      image: "./assets/award-tesla.jpg"
+      image: "./assets/award-tesla.JPG"
     }
   ]
 };
