@@ -19,7 +19,7 @@ window.portfolioProfile = {
     alt: "Stylized profile console for Muhammad Faisal"
   },
   stats: [
-    { value: "4+", label: "Years engineering experience" },
+    { value: "5+", label: "Years engineering experience" },
     { value: "15+", label: "NEOM & High Rise operational sites supported" },
     { value: "3", label: "Countries of field and R&D work" },
     { value: "EV", label: "Developed Pakistan's first EV charger" }
@@ -28,8 +28,8 @@ window.portfolioProfile = {
     { label: "BMS commissioning", level: 96 },
     { label: "HVAC controls", level: 90 },
     { label: "Modbus RTU/TCP", level: 92 },
-    { label: "Energy optimization", level: 84 },
-    { label: "EV power systems", level: 80 }
+    { label: "Energy optimization", level: 87 },
+    { label: "EV power systems", level: 84 }
   ],
   skillGroups: [
     {
@@ -103,7 +103,7 @@ window.portfolioProfile = {
       period: "August 2021 - November 2023",
       location: "Islamabad, Pakistan",
       summary:
-        "Contributed to EV charging systems and power electronics products, including Pakistan first Electric Vehicle charger and charging docking station work.",
+        "Contributed to EV charging systems and power electronics products, including Pakistan first Electric Vehicle charger and charging docking station Hardware design work.",
       responsibilities: [
         "Designed, prototyped, and tested hardware for EV charging systems and energy products.",
         "Worked on PCB design, component selection, and hardware troubleshooting.",
@@ -168,7 +168,7 @@ window.portfolioProfile = {
       highlights: [
         "Managed BMS upgrade across a high-rise banking facility at KAFD with zero operational downtime",
         "Implemented floor-by-floor replacement of FCU, VAV, and CAV controllers",
-        "Programmed and commissioned Siemens DXR and PXR controllers throughout the Tower and Branch buildings",
+        "Programmed and commissioned Siemens DXR and PXC controllers throughout the Tower and Branch buildings",
         "Configured Desigo CC for enhanced centralised monitoring and control",
         "Coordinated with SNB facilities team and subcontractors for integration alignment",
         "Provided continuous on-site technical support for electrical, HVAC, and BMS systems"
@@ -230,7 +230,7 @@ window.portfolioProfile = {
         "Integrated lithium battery BMS data via RS485 into solar inverter UI for monitoring and control",
         "Designed multi-layer PCBs (up to 4 layers) using Eagle and Altium"
       ],
-      tech: ["ESP32", "Arduino", "Modbus RTU", "RS485", "CAN Bus", "Eagle PCB", "Altium", "Nextion HMI", "C / C++", "Power Electronics"]
+      tech: ["ESP32","STM32", "Arduino", "Modbus RTU", "RS485", "CAN Bus", "Eagle PCB", "Altium", "Nextion HMI", "C / C++", "Power Electronics"]
     },
     {
       id: "riyadh-metro-line3",
@@ -275,7 +275,7 @@ window.portfolioProfile = {
     {
       title: "Pride of Performance in R&D",
       issuer: "Tesla Industries",
-      year: "2023",
+      year: "2022",
       image: "./assets/award-tesla.jpg"
     }
   ]
