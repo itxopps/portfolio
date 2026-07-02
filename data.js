@@ -274,7 +274,7 @@ window.portfolioProfile = {
   awards: [
     {
       title: "Pride of Performance in R&D",
-      issuer: "Tesla Industries",
+      issuer: "TESLA Industries",
       year: "2022",
       image: "./assets/award-tesla.jpg"
     }
