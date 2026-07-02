@@ -202,7 +202,7 @@
     
     footer.innerHTML = `
       <div class="footer-inner">
-        <p>&copy; ${currentYear} ${profile.name}. All Rights Reserved-Live on Github.</p>
+        <p>&copy; ${currentYear} ${profile.name}. All Rights Reserved - Live on Github.</p>
         <p class="developer-credit">Designed & Built by <a href="${profile.contact.linkedin}" target="_blank" rel="noreferrer">${profile.name}</a></p>
       </div>
     `;
