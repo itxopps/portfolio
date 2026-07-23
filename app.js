@@ -196,19 +196,54 @@
       linkButton("LinkedIn Profile", profile.contact.linkedin, "ghost")
     );
   }
-  function renderFooter() {
+ function renderFooter() {
     const footer = make("footer", "site-footer");
     const currentYear = new Date().getFullYear();
     
     footer.innerHTML = `
       <div class="footer-inner">
-        <p>&copy; ${currentYear} ${profile.name}. All Rights Reserved - Live on Github.</p>
+        <p>&copy; ${currentYear} ${profile.name}. All Rights Reserved.</p>
+        <p class="visitor-counter">👀 <span id="visitor-count">...</span></p>
         <p class="developer-credit">Designed & Built by <a href="${profile.contact.linkedin}" target="_blank" rel="noreferrer">${profile.name}</a></p>
       </div>
     `;
     
     $(".site-shell").append(footer);
-  }
+    
+    // Fetch and update visitor count
+    updateVisitorCount();
+}
+
+async function updateVisitorCount() {
+    const span = document.getElementById('visitor-count');
+    if (!span) return;
+    
+    try {
+        // Check if the 'visited' cookie exists
+        const hasVisited = document.cookie
+            .split('; ')
+            .some(row => row.startsWith('visited=true'));
+
+        let data;
+        if (!hasVisited) {
+            // First-time visitor → increment
+            const res = await fetch('/api/counter', { method: 'POST' });
+            data = await res.json();
+            // Set cookie for 1 year
+            document.cookie = 'visited=true; path=/; max-age=31536000';
+        } else {
+            // Returning visitor → just fetch the number
+            const res = await fetch('/api/counter');
+            data = await res.json();
+        }
+
+        // Format the number with commas (e.g., 1,234)
+        span.textContent = data.count ? Number(data.count).toLocaleString() : '0';
+    } catch (error) {
+        console.error('Visitor counter error:', error);
+        span.textContent = '?';
+    }
+}
 
   function setupTheme() {
     const button = $("#themeToggle");
