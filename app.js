@@ -1,5 +1,10 @@
 (function () {
   const profile = window.portfolioProfile;
+  if (!profile) {
+    console.error("Portfolio profile object missing from window. Check data.js!");
+    return;
+  }
+
   const $ = (selector) => document.querySelector(selector);
 
   const make = (tag, className, text) => {
@@ -9,46 +14,63 @@
     return node;
   };
 
-  const linkButton = (label, href, variant = "primary") => {
+  const linkButton = (label, href, variant = "primary", isDownload = false) => {
     const a = make("a", `button ${variant}`);
-    a.href = href;
+    a.href = href || "#";
     a.textContent = label;
-    if (href.startsWith("http")) {
+    if (href && href.startsWith("http")) {
       a.target = "_blank";
       a.rel = "noreferrer";
+    }
+    if (isDownload) {
+      a.download = "";
     }
     return a;
   };
 
   function renderHero() {
-    $("#heroLocation").textContent = profile.location;
-    $("#heroName").textContent = profile.name;
-    $("#heroTitle").textContent = profile.headline;
-    $("#heroSummary").textContent = `${profile.intro} ${profile.availability}`;
-    $("#profileRole").textContent = profile.subtitle;
-    $("#profileImage").src = profile.profileImage.src;
-    $("#profileImage").alt = profile.profileImage.alt;
+    if ($("#heroLocation")) $("#heroLocation").textContent = profile.location || "";
+    if ($("#heroName")) $("#heroName").textContent = profile.name || "";
+    if ($("#heroTitle")) $("#heroTitle").textContent = profile.headline || "";
+    if ($("#heroSummary")) $("#heroSummary").textContent = `${profile.intro || ""} ${profile.availability || ""}`;
+    if ($("#profileRole")) $("#profileRole").textContent = profile.subtitle || "";
+    
+    if ($("#profileImage") && profile.profileImage) {
+      $("#profileImage").src = profile.profileImage.src || "";
+      $("#profileImage").alt = profile.profileImage.alt || "";
+    }
 
     const actions = $("#heroActions");
-    actions.append(
-      linkButton("Email", `mailto:${profile.contact.email}`, "primary"),
-      linkButton("LinkedIn", profile.contact.linkedin, "secondary")
-    );
+    if (actions) {
+      actions.innerHTML = "";
+      actions.append(
+        linkButton("Email", `mailto:${profile.contact.email}`, "primary"),
+        linkButton("LinkedIn", profile.contact.linkedin, "secondary")
+      );
+      if (profile.contact && profile.contact.cv) {
+        actions.append(linkButton("Download CV", profile.contact.cv, "secondary", true));
+      }
+    }
 
     const grid = $("#signalGrid");
-    profile.signal.forEach((item) => {
-      const row = make("div", "signal-row");
-      row.innerHTML = `
-        <span>${item.label}</span>
-        <strong>${item.level}%</strong>
-        <i style="--level:${item.level}%"></i>
-      `;
-      grid.append(row);
-    });
+    if (grid && profile.signal) {
+      grid.innerHTML = "";
+      profile.signal.forEach((item) => {
+        const row = make("div", "signal-row");
+        row.innerHTML = `
+          <span>${item.label}</span>
+          <strong>${item.level}%</strong>
+          <i style="--level:${item.level}%"></i>
+        `;
+        grid.append(row);
+      });
+    }
   }
 
   function renderStats() {
     const stats = $("#statsGrid");
+    if (!stats || !profile.stats) return;
+    stats.innerHTML = "";
     profile.stats.forEach((item) => {
       const card = make("article", "stat-card");
       card.innerHTML = `<strong>${item.value}</strong><span>${item.label}</span>`;
@@ -58,20 +80,27 @@
 
   function renderSkills() {
     const groups = $("#skillGroups");
-    profile.skillGroups.forEach((group) => {
-      const article = make("article", "skill-card");
-      const list = group.items.map((item) => `<li>${item}</li>`).join("");
-      article.innerHTML = `<h3>${group.title}</h3><ul>${list}</ul>`;
-      groups.append(article);
-    });
+    if (groups && profile.skillGroups) {
+      groups.innerHTML = "";
+      profile.skillGroups.forEach((group) => {
+        const article = make("article", "skill-card");
+        const list = group.items.map((item) => `<li>${item}</li>`).join("");
+        article.innerHTML = `<h3>${group.title}</h3><ul>${list}</ul>`;
+        groups.append(article);
+      });
+    }
 
     const chips = $("#toolChips");
-    profile.tools.forEach((tool) => chips.append(make("span", "chip", tool)));
+    if (chips && profile.tools) {
+      chips.innerHTML = "";
+      profile.tools.forEach((tool) => chips.append(make("span", "chip", tool)));
+    }
   }
 
   function renderExperience(activeIndex = 0) {
     const tabs = $("#timelineTabs");
     const detail = $("#experienceDetail");
+    if (!tabs || !detail || !profile.experience) return;
     tabs.innerHTML = "";
 
     profile.experience.forEach((item, index) => {
@@ -85,27 +114,30 @@
     });
 
     const current = profile.experience[activeIndex];
-    const responsibilities = current.responsibilities.map((item) => `<li>${item}</li>`).join("");
-    const achievements = current.achievements.map((item) => `<li>${item}</li>`).join("");
-    detail.innerHTML = `
-      <div class="detail-kicker">${current.period} / ${current.location}</div>
-      <h3>${current.role}</h3>
-      <p>${current.summary}</p>
-      <div class="detail-columns">
-        <div>
-          <h4>Responsibilities</h4>
-          <ul>${responsibilities}</ul>
+    if (current) {
+      const responsibilities = (current.responsibilities || []).map((item) => `<li>${item}</li>`).join("");
+      const achievements = (current.achievements || []).map((item) => `<li>${item}</li>`).join("");
+      detail.innerHTML = `
+        <div class="detail-kicker">${current.period} / ${current.location}</div>
+        <h3>${current.role}</h3>
+        <p>${current.summary}</p>
+        <div class="detail-columns">
+          <div>
+            <h4>Responsibilities</h4>
+            <ul>${responsibilities}</ul>
+          </div>
+          <div>
+            <h4>Achievements</h4>
+            <ul>${achievements}</ul>
+          </div>
         </div>
-        <div>
-          <h4>Achievements</h4>
-          <ul>${achievements}</ul>
-        </div>
-      </div>
-    `;
+      `;
+    }
   }
 
   function renderProjectFilters(activeCategory = "All") {
     const filters = $("#projectFilters");
+    if (!filters || !profile.impact) return;
     const categories = ["All", ...new Set(profile.impact.map((item) => item.category))];
     filters.innerHTML = "";
 
@@ -124,6 +156,7 @@
 
   function renderImpact(activeCategory = "All") {
     const grid = $("#impactGrid");
+    if (!grid || !profile.impact) return;
     grid.innerHTML = "";
     const items = activeCategory === "All"
       ? profile.impact
@@ -159,44 +192,55 @@
 
   function renderEducation() {
     const list = $("#educationList");
-    profile.education.forEach((item) => {
-      const article = make("article", "education-card");
-      article.innerHTML = `
-        <h3>${item.school}</h3>
-        <p>${item.degree}</p>
-        <span>${item.period}</span>
-      `;
-      list.append(article);
-    });
+    if (list && profile.education) {
+      list.innerHTML = "";
+      profile.education.forEach((item) => {
+        const article = make("article", "education-card");
+        article.innerHTML = `
+          <h3>${item.school}</h3>
+          <p>${item.degree}</p>
+          <span>${item.period}</span>
+        `;
+        list.append(article);
+      });
+    }
 
     const awardBanner = $("#awardBanner");
-    awardBanner.innerHTML = "";
-    profile.awards.forEach((award) => {
-      const card = make("div", "award-card");
-      card.innerHTML = `
-        ${award.image ? `
-        <div class="award-image-wrap">
-          <img src="${award.image}" alt="${award.title} award certificate or photo" class="award-img">
-        </div>` : ""}
-        <div class="award-body">
-          <span class="award-label">Honor &amp; Award</span>
-          <strong class="award-title">${award.title}</strong>
-          <p class="award-meta">${award.issuer}${award.year ? " · " + award.year : ""}</p>
-        </div>
-      `;
-      awardBanner.append(card);
-    });
+    if (awardBanner && profile.awards) {
+      awardBanner.innerHTML = "";
+      profile.awards.forEach((award) => {
+        const card = make("div", "award-card");
+        card.innerHTML = `
+          ${award.image ? `
+          <div class="award-image-wrap">
+            <img src="${award.image}" alt="${award.title} award certificate or photo" class="award-img">
+          </div>` : ""}
+          <div class="award-body">
+            <span class="award-label">Honor &amp; Award</span>
+            <strong class="award-title">${award.title}</strong>
+            <p class="award-meta">${award.issuer}${award.year ? " · " + award.year : ""}</p>
+          </div>
+        `;
+        awardBanner.append(card);
+      });
+    }
   }
 
   function renderContact() {
     const actions = $("#contactActions");
+    if (!actions || !profile.contact) return;
+    actions.innerHTML = "";
     actions.append(
       linkButton(profile.contact.email, `mailto:${profile.contact.email}`, "primary"),
       linkButton(profile.contact.phone, `tel:${profile.contact.phone}`, "secondary"),
       linkButton("LinkedIn Profile", profile.contact.linkedin, "ghost")
     );
+    if (profile.contact.cv) {
+      actions.append(linkButton("Download CV", profile.contact.cv, "ghost", true));
+    }
   }
- function renderFooter() {
+
+  function renderFooter() {
     const footer = make("footer", "site-footer");
     const currentYear = new Date().getFullYear();
     
@@ -208,45 +252,41 @@
       </div>
     `;
     
-    $(".site-shell").append(footer);
+    const shell = $(".site-shell");
+    if (shell) shell.append(footer);
     
-    // Fetch and update visitor count
     updateVisitorCount();
-}
+  }
 
-async function updateVisitorCount() {
+  async function updateVisitorCount() {
     const span = document.getElementById('visitor-count');
     if (!span) return;
     
     try {
-        // Check if the 'visited' cookie exists
-        const hasVisited = document.cookie
-            .split('; ')
-            .some(row => row.startsWith('visited=true'));
+      const hasVisited = document.cookie
+        .split('; ')
+        .some(row => row.startsWith('visited=true'));
 
-        let data;
-        if (!hasVisited) {
-            // First-time visitor → increment
-            const res = await fetch('/api/counter', { method: 'POST' });
-            data = await res.json();
-            // Set cookie for 1 year
-            document.cookie = 'visited=true; path=/; max-age=31536000';
-        } else {
-            // Returning visitor → just fetch the number
-            const res = await fetch('/api/counter');
-            data = await res.json();
-        }
+      let data;
+      if (!hasVisited) {
+        const res = await fetch('/api/counter', { method: 'POST' });
+        data = await res.json();
+        document.cookie = 'visited=true; path=/; max-age=31536000';
+      } else {
+        const res = await fetch('/api/counter');
+        data = await res.json();
+      }
 
-        // Format the number with commas (e.g., 1,234)
-        span.textContent = data.count ? Number(data.count).toLocaleString() : '0';
+      span.textContent = data.count ? Number(data.count).toLocaleString() : '0';
     } catch (error) {
-        console.error('Visitor counter error:', error);
-        span.textContent = '?';
+      console.error('Visitor counter error:', error);
+      span.textContent = '?';
     }
-}
+  }
 
   function setupTheme() {
     const button = $("#themeToggle");
+    if (!button) return;
     const stored = localStorage.getItem("portfolio-theme");
     if (stored === "light") document.body.classList.add("light-theme");
 
@@ -282,12 +322,10 @@ async function updateVisitorCount() {
       nav.classList.contains("is-open") ? close() : open();
     });
 
-    // Close when any nav link is tapped
     nav.querySelectorAll(".nav-close-link").forEach((link) => {
       link.addEventListener("click", close);
     });
 
-    // Close on Escape
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") close();
     });
