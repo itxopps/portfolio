@@ -12,7 +12,8 @@ window.portfolioProfile = {
   contact: {
     phone: "+966566870827",
     email: "mfaisal1117fs@gmail.com",
-    linkedin: "https://www.linkedin.com/in/muhammad-faisal-163870163"
+    linkedin: "https://www.linkedin.com/in/muhammad-faisal-163870163",
+    cv: "./assets/Muhammad_Faisal_CV.pdf"
   },
   profileImage: {
     src: "./assets/profile.jpg",
