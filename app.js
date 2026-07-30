@@ -288,7 +288,20 @@
     const button = $("#themeToggle");
     if (!button) return;
     const stored = localStorage.getItem("portfolio-theme");
-    if (stored === "light") document.body.classList.add("light-theme");
+
+    const updateThemeIcon = () => {
+      const isLight = document.body.classList.contains("light-theme");
+      button.innerHTML = isLight
+        ? '<span aria-hidden="true">🌙</span>'
+        : '<span aria-hidden="true">☀️</span>';
+      button.setAttribute("title", isLight ? "Switch to Dark Theme" : "Switch to Light Theme");
+      button.setAttribute("aria-label", isLight ? "Switch to Dark Theme" : "Switch to Light Theme");
+    };
+
+    if (stored === "light") {
+      document.body.classList.add("light-theme");
+    }
+    updateThemeIcon();
 
     button.addEventListener("click", () => {
       document.body.classList.toggle("light-theme");
@@ -296,6 +309,7 @@
         "portfolio-theme",
         document.body.classList.contains("light-theme") ? "light" : "dark"
       );
+      updateThemeIcon();
     });
   }
 
