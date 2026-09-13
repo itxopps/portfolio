@@ -196,8 +196,7 @@ window.portfolioProfile = {
         "Monitoring HVAC systems across multiple Line 3 stations in real time"
       ],
       tech: ["Allen Bradley SCADA", "Siemens BMS", "Modbus TCP/IP", "HVAC Monitoring", "Field Device Integration", "Power Shelter Systems"]
-    }
-  ],
+    },
     {
       id: "saudi-national-bank",
       title: "Saudi National Bank Head Office",
@@ -283,7 +282,7 @@ window.portfolioProfile = {
       ],
       tech: ["ESP32","STM32", "Arduino", "Modbus RTU", "RS485", "CAN Bus", "Eagle PCB", "Altium", "Nextion HMI", "C / C++", "Power Electronics"]
     },
-   
+   ],
   education: [
     {
       school: "University of Sargodha",
