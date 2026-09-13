@@ -78,6 +78,28 @@ window.portfolioProfile = {
     "Energy Management"
   ],
   experience: [
+
+    {
+      company: "COG (Cold Oasis Group)",
+      role: "Electrical Engineer",
+      period: "August 2026 - Present",
+      location: "Dammam, Saudi Arabia",
+      summary:
+        "Working with COG on design, execution, and commissioning of Building Management Systems, electrical systems, and smart energy solutions across major commercial and banking sector projects.",
+      responsibilities: [
+        "Lead Programming, commissioning, testing, and troubleshooting of BMS controllers, HVAC systems, and electrical panels.",
+        "Configure and program Siemens Desigo and PXC controllers for system integration.",
+        "Implement Modbus TCP/IP and RTU communication for seamless device connectivity.",
+        "Oversee site upgrades and retrofitting while maintaining operational continuity.",
+        "Collaborate with cross-functional teams to meet project standards and deadlines."
+      ],
+      achievements: [
+        "Delivered system upgrades and commissioning at Aramco Corporate Academy, Dahran, supporting critical infrastructure uptime.",
+        "Managed BMS and electrical integration, improving energy usage and HVAC performance.",
+        "Partnered with Multi-Vendor Teams to integrate 3rd party equipments."
+      ]
+    },
+    
     {
       company: "Siemens",
       role: "Electrical Engineer",
