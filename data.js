@@ -148,27 +148,27 @@ window.portfolioProfile = {
       tag: "Smart infrastructure",
       category: "BMS",
       image: "./assets/Aramco1.jpg",
-      text: "BMS upgrade and electrical integration focused on energy usage, HVAC performance, and reliable commissioning for a demanding commercial environment.",
+      text: "BMS installation and electrical integration with the Smart building network to optimize the energy efficiency, HVAC performance, and reliable commissioning for a Corporate commercial Building.",
       images: [
         "./assets/Aramco1.jpg",
         "./assets/Aramco2.jpg",
         "./assets/Aramco3.jpg",
         "./assets/Aramco4.jpg"
       ],
-      client: "Granada Business Park",
-      location: "Riyadh, Saudi Arabia",
-      period: "June 2025 – Present",
-      role: "Electrical Engineer – Siemens",
-      details: "Led BMS site operations, system upgrades, and electrical integration for Granada Business Park facilities. Planned and implemented upgrades of outdated controllers and thermostats using Siemens TXM modules and Desigo CC. Conducted programming and commissioning of BMS devices including DXRs, PXRs, and HMI interfaces, while coordinating with the client and subcontractors to ensure seamless integration of all automation systems.",
+      client: "Saudi Aramco",
+      location: "Dharan, Saudi Arabia",
+      period: "August 2026 – Present",
+      role: "Electrical Engineer – COG",
+      details: "Led BMS site installation, system upgrades, and electrical integration for Aramco Corporate Acadmey. Programmed and commisioned DDC controllers and thermostats using Siemens TXM modules and Desigo CC. Conducted programming and commissioning of BMS devices including DXRs, PXCs, and HMI interfaces, while coordinating with the client and subcontractors to ensure seamless integration of all automation systems.",
       highlights: [
         "Led full BMS site operations and electrical integration across the facility",
-        "Upgraded outdated controllers and thermostats using Siemens TXM modules and Desigo CC",
-        "Programmed and commissioned DXR, PXR, and HMI interface devices",
+        "Designed logics and programs for controllers and thermostats using Siemens ABT site",
+        "Programmed and commissioned DXR, PXC, and HMI interface devices",
         "Improved reliability of site automation systems ensuring uninterrupted operations",
         "Coordinated with client and subcontractors for seamless automation integration",
         "Provided on-site technical support for electrical, HVAC, and automation systems"
       ],
-      tech: ["Siemens Desigo CC", "TXM Modules", "DXR Controllers", "PXR Controllers", "HMI Interfaces", "HVAC Integration", "BACnet"]
+      tech: ["Siemens Desigo CC", "TXM Modules", "DXR Controllers", "PXC Controllers", "HMI Interfaces", "HVAC Integration", "BACnet", "MODbus"]
     },
     {
       id: "granada-business-park",
@@ -196,7 +196,7 @@ window.portfolioProfile = {
         "Coordinated with client and subcontractors for seamless automation integration",
         "Provided on-site technical support for electrical, HVAC, and automation systems"
       ],
-      tech: ["Siemens Desigo CC", "TXM Modules", "DXR Controllers", "PXR Controllers", "HMI Interfaces", "HVAC Integration", "BACnet"]
+      tech: ["Siemens Desigo CC", "TXM Modules", "DXR Controllers", "PXC Controllers", "HMI Interfaces", "HVAC Integration", "BACnet"]
     },
 
      {
@@ -251,7 +251,7 @@ window.portfolioProfile = {
         "Coordinated with SNB facilities team and subcontractors for integration alignment",
         "Provided continuous on-site technical support for electrical, HVAC, and BMS systems"
       ],
-      tech: ["Siemens Desigo CC", "DXR2 Controllers", "PXR Controllers", "TXM Modules", "FCU Control", "VAV / CAV", "BACnet MS/TP", "HVAC"]
+      tech: ["Siemens Desigo CC", "DXR2 Controllers", "PXC Classic Controllers", "TXM Modules", "FCU Control", "VAV / CAV", "BACnet MS/TP", "HVAC"]
     },
     {
       id: "neom-sites",
