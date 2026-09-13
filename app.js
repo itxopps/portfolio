@@ -209,12 +209,12 @@
     if (awardBanner && profile.awards) {
       awardBanner.innerHTML = "";
       profile.awards.forEach((award) => {
-        const card = make("div", "award-card");
+        const card = make("div", "award-card award-card-large");
         card.innerHTML = `
           ${award.image ? `
-          <div class="award-image-wrap">
+          <a href="${award.image}" target="_blank" rel="noopener noreferrer" class="award-image-wrap award-image-large">
             <img src="${award.image}" alt="${award.title} award certificate or photo" class="award-img">
-          </div>` : ""}
+          </a>` : ""}
           <div class="award-body">
             <span class="award-label">Honor &amp; Award</span>
             <strong class="award-title">${award.title}</strong>
