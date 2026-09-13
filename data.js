@@ -147,13 +147,13 @@ window.portfolioProfile = {
       title: "Aramco Corporate Academy",
       tag: "Smart infrastructure",
       category: "BMS",
-      image: "./assets/project-granada-bms.jpeg",
+      image: "./assets/Aramco1.jpg",
       text: "BMS upgrade and electrical integration focused on energy usage, HVAC performance, and reliable commissioning for a demanding commercial environment.",
       images: [
-        "./assets/gb1.jpg",
-        "./assets/gb2.jpg",
-        "./assets/gb3.jpg",
-        "./assets/gb4.jpg"
+        "./assets/Aramco1.jpg",
+        "./assets/Aramco2.jpg",
+        "./assets/Aramco3.jpg",
+        "./assets/Aramco4.jpg"
       ],
       client: "Granada Business Park",
       location: "Riyadh, Saudi Arabia",
