@@ -143,6 +143,34 @@ window.portfolioProfile = {
   ],
   impact: [
     {
+      id: "Aramco-corporate-Academy",
+      title: "Aramco Corporate Academy",
+      tag: "Smart infrastructure",
+      category: "BMS",
+      image: "./assets/project-granada-bms.jpeg",
+      text: "BMS upgrade and electrical integration focused on energy usage, HVAC performance, and reliable commissioning for a demanding commercial environment.",
+      images: [
+        "./assets/gb1.jpg",
+        "./assets/gb2.jpg",
+        "./assets/gb3.jpg",
+        "./assets/gb4.jpg"
+      ],
+      client: "Granada Business Park",
+      location: "Riyadh, Saudi Arabia",
+      period: "June 2025 – Present",
+      role: "Electrical Engineer – Siemens",
+      details: "Led BMS site operations, system upgrades, and electrical integration for Granada Business Park facilities. Planned and implemented upgrades of outdated controllers and thermostats using Siemens TXM modules and Desigo CC. Conducted programming and commissioning of BMS devices including DXRs, PXRs, and HMI interfaces, while coordinating with the client and subcontractors to ensure seamless integration of all automation systems.",
+      highlights: [
+        "Led full BMS site operations and electrical integration across the facility",
+        "Upgraded outdated controllers and thermostats using Siemens TXM modules and Desigo CC",
+        "Programmed and commissioned DXR, PXR, and HMI interface devices",
+        "Improved reliability of site automation systems ensuring uninterrupted operations",
+        "Coordinated with client and subcontractors for seamless automation integration",
+        "Provided on-site technical support for electrical, HVAC, and automation systems"
+      ],
+      tech: ["Siemens Desigo CC", "TXM Modules", "DXR Controllers", "PXR Controllers", "HMI Interfaces", "HVAC Integration", "BACnet"]
+    },
+    {
       id: "granada-business-park",
       title: "Granada Business Park",
       tag: "Smart infrastructure",
