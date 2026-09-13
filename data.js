@@ -103,7 +103,7 @@ window.portfolioProfile = {
     {
       company: "Siemens",
       role: "Electrical Engineer",
-      period: "November 2023 - Present",
+      period: "November 2023 - June 2026",
       location: "Riyadh, Saudi Arabia",
       summary:
         "Working with Siemens Building Technologies on design, execution, and commissioning of Building Management Systems, electrical systems, and smart energy solutions across major commercial and banking sector projects.",
@@ -170,6 +170,34 @@ window.portfolioProfile = {
       ],
       tech: ["Siemens Desigo CC", "TXM Modules", "DXR Controllers", "PXR Controllers", "HMI Interfaces", "HVAC Integration", "BACnet"]
     },
+
+     {
+      id: "riyadh-metro-line3",
+      title: "Riyadh Metro Line 3 – Power Shelters",
+      tag: "SCADA integration",
+      category: "Controls",
+      image: "./assets/metro1.jpg",
+      text: "Allen Bradley SCADA integration with Siemens BMS for real-time HVAC monitoring and control across Riyadh Metro Line 3 power shelter stations.",
+      images: [
+        "./assets/metro1.jpg",
+        "./assets/metro2.jpg",
+        "./assets/metro3.jpg"
+      ],
+      client: "Riyadh Metro – Line 3",
+      location: "Riyadh, Saudi Arabia",
+      period: "October 2025 – Present",
+      role: "Electrical Engineer – Siemens",
+      details: "Working on the integration of Allen Bradley SCADA systems with Siemens BMS across Riyadh Metro Line 3 power shelter stations. Responsibilities include enabling control commands from SCADA to BMS, auto and manual control selection from SCADA, and Modbus integration for sensor and field device data. The project ensures real-time HVAC monitoring and reliable remote control across critical metro infrastructure.",
+      highlights: [
+        "Integrating Allen Bradley SCADA with Siemens BMS for unified metro infrastructure control",
+        "Enabling bi-directional control commands between SCADA and BMS systems",
+        "Implementing auto and manual control mode selection from SCADA interface",
+        "Configuring Modbus integration for sensors and field devices across power shelters",
+        "Monitoring HVAC systems across multiple Line 3 stations in real time"
+      ],
+      tech: ["Allen Bradley SCADA", "Siemens BMS", "Modbus TCP/IP", "HVAC Monitoring", "Field Device Integration", "Power Shelter Systems"]
+    }
+  ],
     {
       id: "saudi-national-bank",
       title: "Saudi National Bank Head Office",
@@ -255,33 +283,7 @@ window.portfolioProfile = {
       ],
       tech: ["ESP32","STM32", "Arduino", "Modbus RTU", "RS485", "CAN Bus", "Eagle PCB", "Altium", "Nextion HMI", "C / C++", "Power Electronics"]
     },
-    {
-      id: "riyadh-metro-line3",
-      title: "Riyadh Metro Line 3 – Power Shelters",
-      tag: "SCADA integration",
-      category: "Controls",
-      image: "./assets/metro1.jpg",
-      text: "Allen Bradley SCADA integration with Siemens BMS for real-time HVAC monitoring and control across Riyadh Metro Line 3 power shelter stations.",
-      images: [
-        "./assets/metro1.jpg",
-        "./assets/metro2.jpg",
-        "./assets/metro3.jpg"
-      ],
-      client: "Riyadh Metro – Line 3",
-      location: "Riyadh, Saudi Arabia",
-      period: "October 2025 – Present",
-      role: "Electrical Engineer – Siemens",
-      details: "Working on the integration of Allen Bradley SCADA systems with Siemens BMS across Riyadh Metro Line 3 power shelter stations. Responsibilities include enabling control commands from SCADA to BMS, auto and manual control selection from SCADA, and Modbus integration for sensor and field device data. The project ensures real-time HVAC monitoring and reliable remote control across critical metro infrastructure.",
-      highlights: [
-        "Integrating Allen Bradley SCADA with Siemens BMS for unified metro infrastructure control",
-        "Enabling bi-directional control commands between SCADA and BMS systems",
-        "Implementing auto and manual control mode selection from SCADA interface",
-        "Configuring Modbus integration for sensors and field devices across power shelters",
-        "Monitoring HVAC systems across multiple Line 3 stations in real time"
-      ],
-      tech: ["Allen Bradley SCADA", "Siemens BMS", "Modbus TCP/IP", "HVAC Monitoring", "Field Device Integration", "Power Shelter Systems"]
-    }
-  ],
+   
   education: [
     {
       school: "University of Sargodha",
