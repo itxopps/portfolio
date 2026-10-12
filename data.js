@@ -6,7 +6,7 @@ window.portfolioProfile = {
   headline: "Siemens Control Systems and BMS Engineer",
   subtitle: "Smart Building Automation - HVAC - Modbus - IoT - Energy Management - EV Infrastructure",
   intro:
-    "BMS and Electrical Engineer with 4+ years of hands-on experience delivering smart building automation, HVAC commissioning, and energy management solutions across large-scale commercial and infrastructure projects in Saudi Arabia and Pakistan. Skilled in Embedded systems development and EV infrastructure",
+    "BMS and Electrical Engineer with 6+ years of hands-on experience delivering smart building automation, HVAC commissioning, and energy management solutions across large-scale commercial and infrastructure projects in Saudi Arabia and Pakistan. Skilled in Embedded systems development and EV infrastructure",
   availability:
     "Open to senior BMS, Building Automation, and Smart Systems Engineering roles across KSA and the wider GCC region.",
   contact: {
@@ -20,7 +20,7 @@ window.portfolioProfile = {
     alt: "Stylized profile console for Muhammad Faisal"
   },
   stats: [
-    { value: "5+", label: "Years engineering experience" },
+    { value: "6+", label: "Years engineering experience" },
     { value: "15+", label: "NEOM & High Rise operational sites supported" },
     { value: "3", label: "Countries of field and R&D work" },
     { value: "EV", label: "Developed Pakistan's first EV charger" }
