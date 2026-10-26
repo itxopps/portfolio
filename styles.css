@@ -147,7 +147,7 @@ body.light-theme .topbar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--line);
+  border: 2px solid var(--line);
   background: var(--panel);
   color: var(--text);
   cursor: pointer;
@@ -158,7 +158,7 @@ body.light-theme .topbar {
 }
 
 .brand-mark:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   border-color: var(--accent);
 }
 
