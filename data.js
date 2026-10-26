@@ -2,11 +2,11 @@
 // The website renders from this profile object.
 window.portfolioProfile = {
   name: "Muhammad Faisal",
-  location: "Diriyah, Riyadh, Saudi Arabia",
-  headline: "Siemens Control Systems and BMS Engineer",
-  subtitle: "Smart Building Automation - HVAC - Modbus - IoT - Energy Management - EV Infrastructure",
+  location: "Riyadh, Saudi Arabia",
+  headline: "BMS Control Systems & Ai integration Engineer",
+  subtitle: "Smart Building Automation - Ai - HVAC - Modbus - IoT - Energy Management - EV Infrastructure",
   intro:
-    "BMS and Electrical Engineer with 6+ years of hands-on experience delivering smart building automation, HVAC commissioning, and energy management solutions across large-scale commercial and infrastructure projects in Saudi Arabia and Pakistan. Skilled in Embedded systems development and EV infrastructure",
+    "BMS and Electrical Engineer with 6+ years of hands-on experience delivering smart building automation, HVAC commissioning, and energy management solutions across large-scale commercial and infrastructure projects in Saudi Arabia and Pakistan. Skilled in Embedded systems development, Ai integration and EV infrastructure",
   availability:
     "Open to senior BMS, Building Automation, and Smart Systems Engineering roles across KSA and the wider GCC region.",
   contact: {
@@ -21,16 +21,17 @@ window.portfolioProfile = {
   },
   stats: [
     { value: "6+", label: "Years engineering experience" },
-    { value: "15+", label: "NEOM & High Rise operational sites supported" },
+    { value: "17+", label: "NEOM & High Rise operational sites supported" },
     { value: "3", label: "Countries of field and R&D work" },
     { value: "EV", label: "Developed Pakistan's first EV charger" }
   ],
   signal: [
+    { label: "Ai Integration", level: 98 },
     { label: "BMS commissioning", level: 96 },
-    { label: "HVAC controls", level: 90 },
-    { label: "Modbus RTU/TCP", level: 92 },
+    { label: "HVAC controls", level: 93 },
+    { label: "Modbus RTU/TCP", level: 95 },
     { label: "Energy optimization", level: 87 },
-    { label: "EV power systems", level: 84 }
+    { label: "EV Charging development", level: 95 }
   ],
   skillGroups: [
     {
@@ -46,6 +47,7 @@ window.portfolioProfile = {
     {
       title: "Controls and Integration",
       items: [
+        "Ai integration",
         "Modbus RTU and TCP/IP",
         "RS485 and BACnet workflows",
         "FACP and BMS integration",
@@ -78,11 +80,26 @@ window.portfolioProfile = {
     "Energy Management"
   ],
   experience: [
+ {
+      company: "Eco Edge Ai",
+      role: "Ai & BMS Integration Engineer",
+      period: "October 2026 - Present",
+      location: "Riyadh, Saudi Arabia",
+      summary:
+        "Working with Eco Edge Ai on BMS & Ai integration and commissioning of Building Management Systems, electrical systems, and smart energy solutions across major commercial sector projects.",
+      responsibilities: [
+        "Lead Programming, integration, commissioning, testing, and troubleshooting of BMS system to control & monitor with Ai.",
+        "Configure and program Edge Devices to execute Ai Algorithms.",
+        "Implement BACNet/IP communication for seamless device connectivity.",
+        "Oversee site upgrades while maintaining operational continuity.",
+        "Collaborate with cross-functional teams to meet project standards and deadlines."
+      ],
+    },    
 
     {
       company: "COG (Cold Oasis Group)",
       role: "Electrical Engineer",
-      period: "August 2026 - Present",
+      period: "August 2026 - October 2026",
       location: "Dammam, Saudi Arabia",
       summary:
         "Working with COG on design, execution, and commissioning of Building Management Systems, electrical systems, and smart energy solutions across major commercial and banking sector projects.",
@@ -94,7 +111,7 @@ window.portfolioProfile = {
         "Collaborate with cross-functional teams to meet project standards and deadlines."
       ],
       achievements: [
-        "Delivered system upgrades and commissioning at Aramco Corporate Academy, Dahran, supporting critical infrastructure uptime.",
+        "Delivered system installation, Programming and commissioning at Aramco Corporate Academy, Dahran, supporting critical infrastructure uptime.",
         "Managed BMS and electrical integration, improving energy usage and HVAC performance.",
         "Partnered with Multi-Vendor Teams to integrate 3rd party equipments."
       ]
