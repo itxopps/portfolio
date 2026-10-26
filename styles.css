@@ -144,13 +144,16 @@ body.light-theme .topbar {
 .brand-mark {
   width: 44px;
   height: 44px;
-  display: grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--line);
   background: var(--panel);
   color: var(--text);
-  font-weight: 800;
-  letter-spacing: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.15rem;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
   box-shadow: 0 0 28px rgba(66, 232, 197, 0.34);
 }
 
