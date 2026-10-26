@@ -154,7 +154,7 @@ body.light-theme .topbar {
   font: inherit;
   font-size: 1.15rem;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-  box-shadow: 0 0 28px rgba(66, 232, 197, 0.34);
+ /* box-shadow: 0 0 28px rgba(66, 232, 197, 0.34);*/
 }
 
 .brand-mark:hover {
