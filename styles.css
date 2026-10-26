@@ -108,7 +108,6 @@ a {
   overflow: hidden;
 }
 
-/* ── UPDATED TOPBAR ── */
 .topbar {
   position: fixed;
   z-index: 20;
@@ -122,45 +121,16 @@ a {
   justify-content: space-between;
   gap: 18px;
   padding: 10px 12px;
-  
-  /* Backdrop filter works perfectly when the main block handles layout */
-  backdrop-filter: blur(18px);
-  
-  /* Standard box-shadow is hidden by clip-path, drop-shadow wraps geometric corners perfectly */
-  filter: drop-shadow(var(--shadow));
-  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
-}
-
-/* Pseudo-element creates the precise 3px clipped border line outline */
-.topbar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  padding: 3px; /* Controls border thickness */
-  background: var(--line); 
-  
-  /* Masks the padding region to create an active line trace along the polygon path */
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Pseudo-element maps your beautiful glassmorphism background variables underneath content */
-.topbar::after {
-  content: "";
-  position: absolute;
-  inset: 3px; /* Moves exactly inside the 3px border line gap */
-  z-index: -2;
+  border: 3px solid var(--line);
   background:
     linear-gradient(90deg, rgba(66, 232, 197, 0.1), rgba(88, 169, 255, 0.04)),
     rgba(5, 10, 13, 0.78);
-  pointer-events: none;
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
 }
 
-/* Smooth color-switching update for Light Theme variant */
-body.light-theme .topbar::after {
+body.light-theme .topbar {
   background: rgba(255, 255, 255, 0.88);
 }
 
@@ -184,6 +154,7 @@ body.light-theme .topbar::after {
   font: inherit;
   font-size: 1.15rem;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+ /* box-shadow: 0 0 28px rgba(66, 232, 197, 0.34);*/
 }
 
 .brand-mark:hover {
@@ -412,4 +383,3 @@ body.light-theme .signal-panel {
   display: block;
   width: min(260px, 72vw);
   aspect-ratio: 1;
-}
