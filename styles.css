@@ -165,7 +165,7 @@ body.light-theme .topbar {
 
 .nav-links a {
  /* border-bottom: 1px solid transparent;*/
-   width: 200px;
+   width: 100px;
   height: 44px;
   display: inline-flex;
   align-items: center;
