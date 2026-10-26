@@ -121,7 +121,7 @@ a {
   justify-content: space-between;
   gap: 18px;
   padding: 10px 12px;
-  border: 1px solid var(--line);
+  border: 3px solid var(--line);
   background:
     linear-gradient(90deg, rgba(66, 232, 197, 0.1), rgba(88, 169, 255, 0.04)),
     rgba(5, 10, 13, 0.78);
@@ -196,7 +196,7 @@ body.light-theme .topbar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--line);
+  border: 2px solid var(--line);
   background: var(--panel);
   color: var(--text);
   cursor: pointer;
@@ -206,7 +206,7 @@ body.light-theme .topbar {
 }
 
 .icon-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   border-color: var(--accent);
 }
 
