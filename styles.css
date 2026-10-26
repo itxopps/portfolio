@@ -164,12 +164,16 @@ body.light-theme .topbar {
 }
 
 .nav-links a {
-  border-bottom: 1px solid transparent;
-  transition: color 160ms ease, border-color 160ms ease;
+ /* border-bottom: 1px solid transparent;*/
+   border: 2px solid var(--line);
+   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+ /* transition: color 160ms ease, border-color 160ms ease;*/
 }
 
 .nav-links a:hover {
-  color: var(--text);
+ /* color: var(--text);
+  border-color: var(--accent);*/
+   transform: translateY(-3px);
   border-color: var(--accent);
 }
 
