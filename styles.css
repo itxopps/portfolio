@@ -157,6 +157,11 @@ body.light-theme .topbar {
   box-shadow: 0 0 28px rgba(66, 232, 197, 0.34);
 }
 
+.brand-mark:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
 .brand-copy {
   display: grid;
   line-height: 1.15;
